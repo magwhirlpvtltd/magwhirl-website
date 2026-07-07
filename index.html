@@ -1,90 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>MAGWHIRL Pvt Ltd</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Inter',sans-serif;
+font-family:Arial,Helvetica,sans-serif;
 }
 
 body{
-background:#f4f7fb;
-color:#222;
+background:#ffffff;
+color:#333;
+line-height:1.6;
 }
 
 header{
-background:#ffffff;
-padding:18px 8%;
+background:#082b57;
+padding:20px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
 position:sticky;
 top:0;
 z-index:100;
-}box-shadow:0 2px 15px rgba(0,0,0,0.08);
+}
 
-.logo{
-font-size:32px;
-font-weight:bold;
-color:white;
+.logo img{
+height:80px;
 }
 
 nav a{
-color:white;
+color:#fff;
 text-decoration:none;
 margin-left:25px;
 font-weight:bold;
 }
 
 .hero{
-
 height:90vh;
-
 background:
 linear-gradient(rgba(8,43,87,.75),rgba(8,43,87,.75)),
-url("https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1600&q=80");
-
+url("https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1500&q=80");
 background-size:cover;
 background-position:center;
-
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
 padding:20px;
-
 color:white;
-
 }
 
 .hero h1{
-
 font-size:60px;
 margin-bottom:20px;
-
 }
 
 .hero p{
-
 font-size:22px;
 max-width:900px;
 margin:auto;
-
 }
 
 .button{
-
 display:inline-block;
 margin-top:35px;
 padding:16px 40px;
@@ -93,75 +77,31 @@ color:white;
 text-decoration:none;
 border-radius:50px;
 font-weight:bold;
-
 }
 
 section{
-
 padding:80px 8%;
-
 }
 
 .section-title{
-
 font-size:42px;
 color:#082b57;
 text-align:center;
 margin-bottom:50px;
-
-}
-
-.features{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-
-}
-
-.card{
-
-background:white;
-padding:30px;
-border-radius:12px;
-box-shadow:0 10px 20px rgba(0,0,0,.08);
-
-}
-
-.card h3{
-
-margin-bottom:15px;
-color:#082b57;
-
-}
-
-footer{
-
-background:#082b57;
-color:white;
-padding:40px;
-text-align:center;
-
 }
 
 @media(max-width:768px){
 
 .hero h1{
-
 font-size:38px;
-
 }
 
 .hero p{
-
 font-size:18px;
-
 }
 
 nav{
-
 display:none;
-
 }
 
 }
@@ -176,31 +116,23 @@ display:none;
 
 <div class="logo">
 
-    <img src="https://raw.githubusercontent.com/magwhirlpvtltd/magwhirl-website/main/821CB6C1-A1EE-4F4C-AEE2-D820F8ADB72F.png"
-
-         alt="MAGWHIRL Logo"
-
-         style="height:130px;">
-
-</div>
-
-
+<img src="Logo.PNG" alt="MAGWHIRL Logo">
 
 </div>
 
 <nav>
 
-<a href="#">Home</a>
-<a href="#">Products</a>
-<a href="#">About</a>
-<a href="#">Industries</a>
-<a href="#">Contact</a>
+<a href="#home">Home</a>
+<a href="#products">Products</a>
+<a href="#about">About</a>
+<a href="#industries">Industries</a>
+<a href="#contact">Contact</a>
 
 </nav>
 
 </header>
 
-<section class="hero">
+<section class="hero" id="home">
 
 <div>
 
@@ -210,13 +142,13 @@ display:none;
 
 Powering Momentum. Driving Futures.
 
-Premium Commercial Kitchen Solutions for Hotels,
-Hospitals, Cloud Kitchens,
-Industrial Canteens and Government Institutions.
+<br><br>
+
+Premium Commercial Kitchen Solutions for Government Institutions, Hotels, Hospitals, Cloud Kitchens, Industrial Canteens and Educational Institutions.
 
 </p>
 
-<a href="#" class="button">
+<a href="#contact" class="button">
 
 Request a Quote
 
@@ -224,141 +156,130 @@ Request a Quote
 
 </div>
 
-</section>
+</section><section id="products">
 
-<section>
+<h2 class="section-title">Our Products</h2>
 
-<h2 class="section-title">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;">
 
-Why Choose MAGWHIRL
-
-</h2>
-
-<div class="features">
-
-<div class="card">
-
-<h3>Energy Efficient</h3>
-
-<p>
-
-Advanced induction technology reduces operating costs.
-
-</p>
-
+<div style="background:#fff;border-radius:15px;box-shadow:0 10px 20px rgba(0,0,0,.08);padding:20px;text-align:center;">
+<img src="Induction cooktop.jpg" style="width:100%;height:240px;object-fit:contain;">
+<h3>Commercial Induction Cooktop</h3>
+<p>High-performance induction solution for institutional and industrial kitchens.</p>
 </div>
 
-<div class="card">
-
-<h3>Safe Cooking</h3>
-
-<p>
-
-No open flame. Cleaner and safer commercial kitchens.
-
-</p>
-
+<div style="background:#fff;border-radius:15px;box-shadow:0 10px 20px rgba(0,0,0,.08);padding:20px;text-align:center;">
+<img src="Induction griddle.jpg" style="width:100%;height:240px;object-fit:contain;"
+<h3>Commercial Griddle</h3>
+<p>Uniform heating for large-scale cooking with excellent energy efficiency.</p>
 </div>
 
-<div class="card">
-
-<h3>Heavy Duty</h3>
-
-<p>
-
-Designed for continuous commercial operation.
-
-</p>
-
+<div style="background:#fff;border-radius:15px;box-shadow:0 10px 20px rgba(0,0,0,.08);padding:20px;text-align:center;">
+<img src="Induction kadai.jpg" style="width:100%;height:240px;object-fit:contain;">
+<h3>Commercial Induction Kadai</h3>
+<p>Ideal for curries, gravies and bulk cooking operations.</p>
 </div>
 
-<div class="card">
+<div style="background:#fff;border-radius:15px;box-shadow:0 10px 20px rgba(0,0,0,.08);padding:20px;text-align:center;">
+<img src="Induction tawa.jpg" style="width:100%;height:240px;object-fit:contain;">
+<h3>Commercial Induction Tawa</h3>
+<p>Perfect for dosa, chapati, paratha and other flat cooking applications.</p>
+</div>
 
-<h3>Premium Quality</h3>
+<div style="background:#fff;border-radius:15px;box-shadow:0 10px 20px rgba(0,0,0,.08);padding:20px;text-align:center;">
+<img src="Tilting brat pan.jpg" style="width:100%;height:240px;object-fit:contain;">
+<h3>Tilting Bratt Pan</h3>
+<p>Multi-purpose cooking equipment for commercial kitchens.</p>
+</div>
 
-<p>
-
-High-grade stainless steel with professional engineering.
-
-</p>
-
+<div style="background:#fff;border-radius:15px;box-shadow:0 10px 20px rgba(0,0,0,.08);padding:20px;text-align:center;">
+<img src="Idli steamer.jpg" style="width:100%;height:240px;object-fit:contain;">
+<h3>Idli Steamer</h3>
+<p>Heavy-duty stainless steel steamer for institutional food preparation.</p>
 </div>
 
 </div>
 
 </section>
 
+<section id="about" style="background:#f7f9fc;">
 
+<h2 class="section-title">About MAGWHIRL</h2>
 
+<p style="max-width:1100px;margin:auto;font-size:20px;text-align:center;line-height:1.9;">
 
-<!-- About MAGWHIRL section here -->
-  <section id="about" style="padding:80px 20px;background:#ffffff;">
-  <div style="max-width:1200px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">
+MAGWHIRL Pvt Ltd specializes in premium commercial induction kitchen equipment for Government Institutions, Hotels, Hospitals, Educational Campuses, Industrial Canteens and Cloud Kitchens.
 
-    <div>
-      <h2 style="font-size:42px;color:#0b2d5c;margin-bottom:20px;">
-        About MAGWHIRL
-      </h2>
-
-      <p style="font-size:18px;line-height:1.8;color:#555;">
-        MAGWHIRL Pvt Ltd is a leading supplier of premium commercial induction
-        kitchen equipment designed for hotels, hospitals, industrial canteens,
-        cloud kitchens, educational institutions and government organizations.
-      </p>
-
-      <p style="font-size:18px;line-height:1.8;color:#555;margin-top:20px;">
-        Our energy-efficient induction technology delivers faster cooking,
-        enhanced safety, lower operating costs and environmentally friendly
-        performance for professional kitchens.
-      </p>
-
-      <div style="display:flex;gap:15px;flex-wrap:wrap;margin-top:30px;">
-        <div style="background:#f5f7fa;padding:15px 20px;border-radius:10px;">
-          ✔ Premium Quality
-        </div>
-
-        <div style="background:#f5f7fa;padding:15px 20px;border-radius:10px;">
-          ✔ Energy Efficient
-        </div>
-
-        <div style="background:#f5f7fa;padding:15px 20px;border-radius:10px;">
-          ✔ Safe Operation
-        </div>
-
-        <div style="background:#f5f7fa;padding:15px 20px;border-radius:10px;">
-          ✔ Nationwide Support
-        </div>
-      </div>
-    </div>
-
-    <div>
-      <img src="Induction cooktop.jpg"
-           style="width:100%;max-width:800px;display:block;margin:auto;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.15);"
-    </div>
-
-  </div>
-</section>
-
-
-
-<footer>
-
-
-<h2>MAGWHIRL Pvt Ltd</h2>
-
-<p>
-
-Commercial Induction Kitchen Equipment
+Our mission is to deliver energy-efficient, safe and heavy-duty stainless-steel cooking solutions that reduce operating costs while improving productivity.
 
 </p>
 
-<p>
+</section>
 
-Powering Momentum. Driving Futures.
+<section id="industries">
+
+<h2 class="section-title">Industries We Serve</h2>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;text-align:center;">
+
+<div>🏛 Government Institutions</div>
+<div>🏨 Hotels</div>
+<div>🏥 Hospitals</div>
+<div>🎓 Educational Campuses</div>
+<div>🏭 Industrial Canteens</div>
+<div>🍽 Cloud Kitchens</div>
+
+</div>
+
+</section>
+
+<section id="contact" style="background:#082b57;color:white;">
+
+<h2 class="section-title" style="color:white;">Contact Us</h2>
+
+<div style="max-width:900px;margin:auto;text-align:center;font-size:20px;line-height:2;">
+
+<strong>MAGWHIRL Pvt Ltd</strong><br><br>
+
+📞 +91 99881 51508<br>
+
+📞 +91 78426 33213<br><br>
+
+📧 info@magwhirl.com<br><br>
+
+🌐 www.magwhirl.com<br><br>
+
+📍 6-3-193/3/F, Adarsh Nagar, Airport Road,<br>
+Shivarampalli, Rajendranagar,<br>
+K.V. Rangareddy – 500052,<br>
+Telangana, India
+
+</div>
+
+</section><footer style="background:#041a36;color:white;padding:40px 20px;text-align:center;">
+
+<img src="Logo.PNG" alt="MAGWHIRL Logo" style="height:70px;margin-bottom:20px;">
+
+<h3>MAGWHIRL Pvt Ltd</h3>
+
+<p>
+Engineering the Future of Professional Kitchens
+</p>
+
+<p style="margin-top:20px;">
+
+Commercial Induction Kitchen Equipment • Hotels • Hospitals • Government Institutions • Industrial Kitchens
+
+</p>
+
+<p style="margin-top:25px;font-size:14px;color:#cfcfcf;">
+
+© 2026 MAGWHIRL Pvt Ltd. All Rights Reserved.
 
 </p>
 
 </footer>
 
 </body>
+
 </html>
