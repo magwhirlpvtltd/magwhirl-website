@@ -1,106 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Magwhirl Pvt Ltd | Commercial Induction Cooking Equipment</title>
+<meta name="description" content="Magwhirl Pvt Ltd — authorized distributor of FNG commercial induction cooking, food processing and kitchen equipment for hotels, central kitchens and institutions.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --orange: #FD7208;
+    --ember: #FFB347;
+    --charcoal: #1B1F27;
+    --charcoal-2: #262C38;
+    --steel: #8A93A3;
+    --steel-light: #C7CDD6;
+    --off-white: #F7F7F5;
+    --white: #FFFFFF;
+    --signal-green: #3DDC84;
+    --signal-amber: #FFC94A;
+    --signal-red: #FF5D5D;
+
+    --font-display: 'Montserrat', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+
+    --max: 1180px;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--font-body);
+    background:var(--off-white);
+    color:var(--charcoal);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
+  section{padding:96px 0;}
+  h1,h2,h3,h4{font-family:var(--font-display); font-weight:800; letter-spacing:-0.01em;}
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--orange);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:14px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px; height:2px;
+    background:var(--orange);
+    display:inline-block;
+  }
+  .led{display:inline-block; width:8px; height:8px; border-radius:50%; flex-shrink:0;}
+  .led.g{background:var(--signal-green); box-shadow:0 0 6px var(--signal-green);}
+  .led.a{background:var(--signal-amber); box-shadow:0 0 6px var(--signal-amber);}
+  .led.r{background:var(--signal-red); box-shadow:0 0 6px var(--signal-red);}
+
+  /* Focus visibility */
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:3px solid var(--orange);
+    outline-offset:3px;
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(27,31,39,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 24px; max-width:var(--max); margin:0 auto;
+  }
+  .brand{display:flex; align-items:center; gap:10px;}
+  .brand img{height:38px; width:38px;}
+  .brand span{
+    font-family:var(--font-display); font-weight:800; font-size:18px;
+    color:var(--white); letter-spacing:0.02em;
+  }
+  .brand small{
+    display:block; font-family:var(--font-mono); font-size:9px;
+    color:var(--steel-light); letter-spacing:0.12em; font-weight:500;
+  }
+  nav.links{display:flex; gap:32px;}
+  nav.links a{
+    color:var(--steel-light); font-size:14px; font-weight:600;
+    transition:color .2s;
+  }
+  nav.links a:hover{color:var(--orange);}
+  .nav-cta{
+    background:var(--orange); color:var(--charcoal);
+    font-weight:700; font-size:14px; padding:10px 20px;
+    border-radius:3px; transition:transform .15s, background .2s;
+  }
+  .nav-cta:hover{background:var(--ember); transform:translateY(-1px);}
+  .burger{display:none; background:none; border:none; cursor:pointer; padding:6px;}
+  .burger span{display:block; width:24px; height:2px; background:var(--white); margin:5px 0;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:radial-gradient(circle at 82% 20%, rgba(253,114,8,0.18), transparent 55%), var(--charcoal);
+    color:var(--white);
+    padding:120px 0 100px;
+    overflow:hidden;
+  }
+  .hero .wrap{display:grid; grid-template-columns:1.15fr 0.85fr; gap:60px; align-items:center;}
+  .hero-eyebrow{
+    font-family:var(--font-mono); font-size:12px; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--ember); margin-bottom:22px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .hero h1{
+    font-size:clamp(36px,5vw,58px); line-height:1.05; color:var(--white);
+    margin-bottom:22px;
+  }
+  .hero h1 .accent{color:var(--orange);}
+  .hero p.lead{
+    font-size:18px; color:var(--steel-light); max-width:520px; margin-bottom:34px;
+  }
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:44px;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:15px 28px; font-weight:700; font-size:15px;
+    border-radius:3px; transition:transform .15s, background .2s, color .2s, border-color .2s;
+    border:1.5px solid transparent; cursor:pointer;
+  }
+  .btn-primary{background:var(--orange); color:var(--charcoal);}
+  .btn-primary:hover{background:var(--ember); transform:translateY(-2px);}
+  .btn-outline{border-color:rgba(255,255,255,0.3); color:var(--white);}
+  .btn-outline:hover{border-color:var(--orange); color:var(--orange);}
+
+  .hero-stats{display:flex; gap:36px; flex-wrap:wrap;}
+  .hero-stats div{border-left:2px solid rgba(255,255,255,0.15); padding-left:14px;}
+  .hero-stats strong{
+    font-family:var(--font-mono); font-size:26px; color:var(--white); display:block;
+  }
+  .hero-stats span{font-size:12px; color:var(--steel-light); text-transform:uppercase; letter-spacing:0.06em;}
+
+  /* Dial signature element */
+  .dial-wrap{position:relative; display:flex; align-items:center; justify-content:center;}
+  .dial{
+    width:340px; height:340px; border-radius:50%;
+    position:relative;
+    background:conic-gradient(from 220deg, var(--orange) 0deg, var(--ember) 140deg, rgba(255,255,255,0.06) 140deg 360deg);
+    animation:spin 26s linear infinite;
+    display:flex; align-items:center; justify-content:center;
+  }
+  @media (prefers-reduced-motion: reduce){ .dial{animation:none;} .whirl-mark{animation:none !important;} }
+  .dial::before{
+    content:"";
+    position:absolute; inset:14px; border-radius:50%;
+    background:var(--charcoal-2);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+  }
+  .dial-inner{
+    position:relative; z-index:2; text-align:center; color:var(--white);
+  }
+  .dial-inner .kw{font-family:var(--font-mono); font-size:44px; font-weight:600; color:var(--orange);}
+  .dial-inner .kw-label{font-size:11px; letter-spacing:0.14em; color:var(--steel-light); text-transform:uppercase;}
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+  .dial-tick{
+    position:absolute; width:2px; height:14px; background:rgba(255,255,255,0.35);
+    top:6px; left:50%; transform-origin:1px 164px;
+  }
+
+  /* ---------- SECTION HEADS ---------- */
+  .section-head{max-width:640px; margin-bottom:56px;}
+  .section-head h2{font-size:clamp(28px,3.4vw,40px); margin-bottom:16px;}
+  .section-head p{color:var(--steel); font-size:16px;}
+  .light-bg{background:var(--white);}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start;}
+  .about-grid h2{font-size:clamp(26px,3vw,36px); margin-bottom:18px;}
+  .about-grid p{color:var(--steel); margin-bottom:16px; font-size:16px;}
+  .badge-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:22px;}
+  .badge{
+    font-family:var(--font-mono); font-size:12px; padding:8px 14px;
+    border:1px solid rgba(27,31,39,0.15); border-radius:3px; color:var(--charcoal);
+    background:var(--off-white);
+  }
+  .about-panel{
+    background:var(--charcoal); color:var(--white); border-radius:6px; padding:34px;
+    border-left:4px solid var(--orange);
+  }
+  .about-panel h3{font-size:18px; margin-bottom:16px; color:var(--white);}
+  .about-panel ul li{
+    display:flex; gap:10px; align-items:flex-start; margin-bottom:14px;
+    font-size:14.5px; color:var(--steel-light);
+  }
+  .about-panel ul li .led{margin-top:6px;}
+
+  /* ---------- PRODUCTS ---------- */
+  .product-grid{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(270px,1fr)); gap:26px;
+  }
+  .product-card{
+    background:var(--white); border-radius:6px; overflow:hidden;
+    border:1px solid rgba(27,31,39,0.08);
+    transition:transform .2s, box-shadow .2s;
+  }
+  .product-card:hover{transform:translateY(-5px); box-shadow:0 18px 34px rgba(27,31,39,0.12);}
+  .product-media{
+    aspect-ratio:4/3; background:var(--charcoal-2);
+    display:flex; align-items:center; justify-content:center; overflow:hidden;
+    position:relative;
+  }
+  .product-media img{width:100%; height:100%; object-fit:cover;}
+  .product-tag{
+    position:absolute; top:12px; left:12px;
+    background:rgba(27,31,39,0.85); color:var(--ember);
+    font-family:var(--font-mono); font-size:10px; letter-spacing:0.08em;
+    padding:5px 10px; border-radius:2px; text-transform:uppercase;
+  }
+  .product-body{padding:22px;}
+  .product-body h3{font-size:19px; margin-bottom:6px;}
+  .product-body p.desc{color:var(--steel); font-size:14px; margin-bottom:16px;}
+  .spec-row{
+    display:flex; justify-content:space-between; font-family:var(--font-mono);
+    font-size:12.5px; padding:8px 0; border-top:1px dashed rgba(27,31,39,0.12);
+    color:var(--charcoal-2);
+  }
+  .spec-row span:first-child{color:var(--steel);}
+
+  /* ---------- WHY INDUCTION ---------- */
+  .compare-wrap{
+    background:var(--charcoal); border-radius:8px; padding:44px; color:var(--white);
+    display:grid; grid-template-columns:1.3fr 1fr; gap:44px; align-items:center;
+  }
+  .compare-table{width:100%; border-collapse:collapse; font-size:14px;}
+  .compare-table th, .compare-table td{padding:12px 14px; text-align:left;}
+  .compare-table thead th{
+    font-family:var(--font-mono); font-size:11px; text-transform:uppercase;
+    letter-spacing:0.08em; color:var(--steel-light); border-bottom:1px solid rgba(255,255,255,0.14);
+  }
+  .compare-table td{border-bottom:1px solid rgba(255,255,255,0.06); color:var(--steel-light);}
+  .compare-table td.win{color:var(--orange); font-weight:700;}
+  .compare-side h3{color:var(--white); font-size:22px; margin-bottom:16px;}
+  .compare-side li{
+    display:flex; gap:10px; margin-bottom:14px; font-size:14px; color:var(--steel-light);
+  }
+  .compare-side li .led{margin-top:5px;}
+
+  /* ---------- WHY MAGWHIRL ---------- */
+  .value-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
+  .value-card{
+    background:var(--white); border:1px solid rgba(27,31,39,0.08); border-radius:6px;
+    padding:26px; border-top:3px solid var(--orange);
+  }
+  .value-card .num{font-family:var(--font-mono); color:var(--steel); font-size:12px; margin-bottom:12px;}
+  .value-card h4{font-size:16px; margin-bottom:8px;}
+  .value-card p{font-size:13.5px; color:var(--steel);}
+
+  /* ---------- CTA / CONTACT ---------- */
+  .contact-band{
+    background:linear-gradient(120deg, var(--charcoal) 0%, #2A2015 140%);
+    color:var(--white); border-radius:8px; padding:56px; position:relative; overflow:hidden;
+  }
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:50px;}
+  .contact-grid h2{color:var(--white); font-size:clamp(26px,3vw,34px); margin-bottom:14px;}
+  .contact-grid > div:first-child p{color:var(--steel-light); font-size:15px; margin-bottom:26px;}
+  .info-row{display:flex; gap:12px; margin-bottom:16px; font-size:14.5px; color:var(--steel-light);}
+  .info-row strong{color:var(--white); display:block; font-size:12px; text-transform:uppercase; letter-spacing:0.06em; font-family:var(--font-mono); margin-bottom:2px;}
+  form{display:flex; flex-direction:column; gap:14px;}
+  form input, form textarea, form select{
+    background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.16);
+    color:var(--white); padding:13px 14px; border-radius:4px; font-family:var(--font-body); font-size:14px;
+  }
+  form input::placeholder, form textarea::placeholder{color:var(--steel);}
+  form label{font-size:12px; text-transform:uppercase; letter-spacing:0.06em; color:var(--steel-light); font-family:var(--font-mono);}
+  form textarea{resize:vertical; min-height:100px;}
+  form button{align-self:flex-start; margin-top:6px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--charcoal); color:var(--steel-light); padding:48px 0 26px;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px; margin-bottom:36px;}
+  .footer-brand{display:flex; gap:10px; align-items:center; margin-bottom:14px;}
+  .footer-brand img{height:32px; width:32px;}
+  .footer-brand span{font-family:var(--font-display); font-weight:800; color:var(--white); font-size:16px;}
+  footer p{font-size:13.5px; max-width:320px; color:var(--steel);}
+  footer h5{font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--steel); margin-bottom:14px;}
+  footer ul li{margin-bottom:10px; font-size:14px;}
+  footer ul li a:hover{color:var(--orange);}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.08); padding-top:22px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    font-size:12.5px; color:var(--steel);
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:900px){
+    .hero .wrap{grid-template-columns:1fr; text-align:left;}
+    .dial-wrap{order:-1; margin-bottom:10px;}
+    .dial{width:220px; height:220px;}
+    .about-grid, .compare-wrap, .contact-grid{grid-template-columns:1fr;}
+    .value-grid{grid-template-columns:1fr 1fr;}
+    nav.links{display:none;}
+    .burger{display:block;}
+  }
+  @media (max-width:560px){
+    section{padding:64px 0;}
+    .value-grid{grid-template-columns:1fr;}
+    .hero-stats{gap:22px;}
+    .contact-band{padding:30px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="#top">
+      <img src="images/logo.png" alt="Magwhirl Pvt Ltd logo">
+      <span>MAGWHIRL<br><small>POWERING MOMENTUM. DRIVING FUTURES.</small></span>
+    </a>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#induction">Why Induction</a>
+      <a href="#why-us">Why Magwhirl</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="#contact">Request a Quote</a>
+    <button class="burger" aria-label="Open menu" onclick="document.querySelector('nav.links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
 <section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="hero-eyebrow"><span class="led g"></span> Authorized FNG Distributor — Telangana</div>
+      <h1>Commercial induction equipment, <span class="accent">engineered for output.</span></h1>
+      <p class="lead">Magwhirl Pvt Ltd supplies heavy-duty stainless steel induction cooking, frying and food-processing machines to hotels, central kitchens, institutions and government catering programs — built by FNG, backed by us.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#contact">Request a Quote</a>
+        <a class="btn btn-outline" href="#products">View Product Range</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>14+</strong><span>Product Categories</span></div>
+        <div><strong>90-95%</strong><span>Energy Efficiency</span></div>
+        <div><strong>3 Phase</strong><span>Industrial Ready</span></div>
+      </div>
+    </div>
+    <div class="dial-wrap">
+      <div class="dial">
+        <div class="dial-inner">
+          <div class="kw">25<span style="font-size:20px;">kW</span></div>
+          <div class="kw-label">Rated Output</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div class="wrap hero-grid">
+<section id="about" class="light-bg">
+  <div class="wrap about-grid">
+    <div>
+      <div class="eyebrow">Who We Are</div>
+      <h2>Distribution built on real kitchen engineering.</h2>
+      <p>Magwhirl Pvt Ltd is a Hyderabad-based B2B distributor bringing FNG's food-grade stainless steel induction cooking and food-processing equipment to hospitality, institutional and industrial kitchens across Telangana.</p>
+      <p>We work directly with hotel F&amp;B teams, central kitchen operators, food processors and government procurement programs — handling specification, quotation, supply and after-sales support end to end.</p>
+      <div class="badge-row">
+        <span class="badge">HORECA</span>
+        <span class="badge">INSTITUTIONAL</span>
+        <span class="badge">GOVERNMENT TENDERS</span>
+        <span class="badge">FOOD PROCESSING</span>
+      </div>
+    </div>
+    <div class="about-panel">
+      <h3>Why kitchens choose us</h3>
+      <ul>
+        <li><span class="led g"></span> Direct line to FNG's factory specifications — accurate quotes, no guesswork.</li>
+        <li><span class="led g"></span> Standardised capacities that drop straight into tender specifications.</li>
+        <li><span class="led a"></span> Support across single &amp; three-phase site configurations.</li>
+        <li><span class="led g"></span> Post-installation service and Annual Maintenance &amp; Upgrade coverage.</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-<div class="hero-left">
+<section id="products">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Product Range</div>
+      <h2>Built for continuous commercial use</h2>
+      <p>A selection from our FNG-manufactured range. Full specification sheets and additional capacities available on request.</p>
+    </div>
 
-<div class="eyebrow">
-Commercial Kitchen Equipment Specialists
-</div>
+    <div class="product-grid">
 
-<h1>
-Commercial <span class="accent">Induction Kitchen</span><br>
-Solutions for Large Scale Cooking
-</h1>
+      <div class="product-card">
+        <div class="product-media">
+          <span class="product-tag">Bulk Cooking</span>
+          <img src="images/product-01.jpg" alt="FNG Tilting Bratt Pan">
+        </div>
+        <div class="product-body">
+          <h3>Tilting Bratt Pan</h3>
+          <p class="desc">Uniform heating for gravies, curries and bulk batch cooking.</p>
+          <div class="spec-row"><span>Capacity range</span><span>75 – 200 Ltr</span></div>
+          <div class="spec-row"><span>Power</span><span>10 – 25 kW · 3 Phase</span></div>
+        </div>
+      </div>
 
-<p class="lead">
-MAGWHIRL Pvt Ltd is an authorised distributor of premium commercial induction kitchen equipment engineered for hotels, hospitals, industrial canteens, educational institutions and government kitchens.
-</p>
+      <div class="product-card">
+        <div class="product-media">
+          <span class="product-tag">Frying Solutions</span>
+          <img src="images/product-02.jpg" alt="FNG Commercial Kadhai">
+        </div>
+        <div class="product-body">
+          <h3>Commercial Kadhai</h3>
+          <p class="desc">High-capacity frying for sweet, snack and institutional kitchens.</p>
+          <div class="spec-row"><span>Bowl size</span><span>18" – 36"</span></div>
+          <div class="spec-row"><span>Power</span><span>5 – 30 kW</span></div>
+        </div>
+      </div>
 
-<div class="hero-buttons">
+      <div class="product-card">
+        <div class="product-media">
+          <span class="product-tag">Frying Solutions</span>
+          <img src="images/product-03.jpg" alt="FNG Batch Fryer">
+        </div>
+        <div class="product-body">
+          <h3>Fryer / Batch Fryer</h3>
+          <p class="desc">Oil-saving, consistent-browning fryers for QSR and central kitchens.</p>
+          <div class="spec-row"><span>Capacity range</span><span>18 – 200 Ltr</span></div>
+          <div class="spec-row"><span>Power</span><span>7 – 30 kW</span></div>
+        </div>
+      </div>
 
-<a href="#products" class="btn btn-primary">
-View Products
-</a>
+      <div class="product-card">
+        <div class="product-media">
+          <span class="product-tag">Surface &amp; Induction</span>
+          <img src="images/product-04.jpg" alt="FNG Induction Cooktop">
+        </div>
+        <div class="product-body">
+          <h3>Induction Cooktop / Wok</h3>
+          <p class="desc">Instant heat response with cooler, safer live-counter operation.</p>
+          <div class="spec-row"><span>Power</span><span>3.5 – 10 kW</span></div>
+          <div class="spec-row"><span>Response</span><span>&lt; 10ms</span></div>
+        </div>
+      </div>
 
-<a href="#contact" class="btn btn-outline">
-Request a Quotation
-</a>
+      <div class="product-card">
+        <div class="product-media">
+          <span class="product-tag">Specialty</span>
+          <img src="images/product-05.jpg" alt="FNG Electric Tandoor">
+        </div>
+        <div class="product-body">
+          <h3>Electric SS Tandoor</h3>
+          <p class="desc">Round and square models for tandoori kitchens and hotel counters.</p>
+          <div class="spec-row"><span>Dimensions</span><span>23" – 36" Dia</span></div>
+          <div class="spec-row"><span>Power</span><span>15 – 20 kW · 3 Phase</span></div>
+        </div>
+      </div>
 
-</div>
+      <div class="product-card">
+        <div class="product-media">
+          <span class="product-tag">Surface Cooking</span>
+          <img src="images/product-06.jpg" alt="FNG Tawa Griddle" onerror="this.closest('.product-card').style.display='none'">
+        </div>
+        <div class="product-body">
+          <h3>Tawa / Griddle</h3>
+          <p class="desc">Even heat distribution for dosas, chapatis and grilled items.</p>
+          <div class="spec-row"><span>Size</span><span>18" – 32" Dia</span></div>
+          <div class="spec-row"><span>Power</span><span>7 – 15 kW</span></div>
+        </div>
+      </div>
 
-<div class="hero-points">
+    </div>
+  </div>
+</section>
 
-<div>✔ Energy Efficient</div>
+<section id="induction" class="light-bg">
+  <div class="wrap">
+    <div class="compare-wrap">
+      <div>
+        <div class="eyebrow" style="color:var(--ember)">Performance Analysis</div>
+        <table class="compare-table">
+          <thead>
+            <tr><th>Parameter</th><th>Gas</th><th>Induction</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Energy efficiency</td><td>40–50%</td><td class="win">90–95%</td></tr>
+            <tr><td>Heat response</td><td>Standard</td><td class="win">Instant</td></tr>
+            <tr><td>Kitchen safety</td><td>Open flame risk</td><td class="win">Cool-touch, safe</td></tr>
+            <tr><td>Maintenance</td><td>Burner cleaning</td><td class="win">Wipe-clean glass</td></tr>
+            <tr><td>Operating cost</td><td>Fluctuating</td><td class="win">Lowest</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="compare-side">
+        <h3>Why kitchens are switching</h3>
+        <ul>
+          <li><span class="led g"></span> Lower utility bills and faster cooking mean quicker payback despite higher upfront cost.</li>
+          <li><span class="led g"></span> Heat goes into the food, not the kitchen air — cooler kitchens, lower AC load.</li>
+          <li><span class="led a"></span> Digital precision keeps every batch consistent — critical for commercial brands.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div>✔ Heavy Duty Stainless Steel</div>
+<section id="why-us">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Why Magwhirl</div>
+      <h2>A distributor that speaks tender and kitchen, fluently.</h2>
+    </div>
+    <div class="value-grid">
+      <div class="value-card">
+        <div class="num">01 / SPEC</div>
+        <h4>Accurate Specification</h4>
+        <p>Capacities and power ratings mapped directly to tender and RFQ requirements.</p>
+      </div>
+      <div class="value-card">
+        <div class="num">02 / SUPPLY</div>
+        <h4>Reliable Supply</h4>
+        <p>Direct FNG factory sourcing keeps lead times and pricing predictable.</p>
+      </div>
+      <div class="value-card">
+        <div class="num">03 / SITE</div>
+        <h4>Site-Ready Fit</h4>
+        <p>Single or three-phase configurations matched to your existing kitchen infrastructure.</p>
+      </div>
+      <div class="value-card">
+        <div class="num">04 / SUPPORT</div>
+        <h4>After-Sales Coverage</h4>
+        <p>Annual Maintenance &amp; Upgrade plans keep equipment at factory-standard efficiency.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div>✔ Low Maintenance</div>
+<section id="contact" class="light-bg">
+  <div class="wrap">
+    <div class="contact-band">
+      <div class="contact-grid">
+        <div>
+          <div class="eyebrow" style="color:var(--ember)">Get In Touch</div>
+          <h2>Request a quotation</h2>
+          <p>Tell us your capacity, power configuration and kitchen type — we'll respond with FNG specifications and pricing.</p>
+          <div class="info-row"><div><strong>Office</strong>Attapur, Hyderabad, Telangana, India</div></div>
+          <div class="info-row"><div><strong>Email</strong>sales@magwhirl.com</div></div>
+          <div class="info-row"><div><strong>Phone</strong>+91 XXXXX XXXXX</div></div>
+        </div>
+        <form name="enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="enquiry">
+          <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your full name" required>
+          <label for="org">Organisation</label>
+          <input id="org" name="org" type="text" placeholder="Hotel / Company / Institution">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@company.com" required>
+          <label for="product">Product of interest</label>
+          <select id="product" name="product">
+            <option>Tilting Bratt Pan</option>
+            <option>Commercial Kadhai</option>
+            <option>Fryer / Batch Fryer</option>
+            <option>Induction Cooktop / Wok</option>
+            <option>Electric Tandoor</option>
+            <option>Other / Not sure yet</option>
+          </select>
+          <label for="msg">Requirement details</label>
+          <textarea id="msg" name="message" placeholder="Capacity, phase, quantity, timeline..."></textarea>
+          <button class="btn btn-primary" type="submit">Send Enquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div>✔ Fast Heating Technology</div>
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="images/logo.png" alt="Magwhirl Pvt Ltd">
+          <span>MAGWHIRL PVT LTD</span>
+        </div>
+        <p>Authorized distributor of FNG commercial induction cooking, frying and food-processing equipment across Telangana.</p>
+      </div>
+      <div>
+        <h5>Navigate</h5>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#why-us">Why Magwhirl</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Product Lines</h5>
+        <ul>
+          <li><a href="#products">Bratt Pans &amp; Kettles</a></li>
+          <li><a href="#products">Kadhais &amp; Fryers</a></li>
+          <li><a href="#products">Induction Cooktops</a></li>
+          <li><a href="#products">Tandoors &amp; Griddles</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Magwhirl Pvt Ltd. All rights reserved.</span>
+      <span>Powering Momentum. Driving Futures.</span>
+    </div>
+  </div>
+</footer>
 
-<div>✔ Pan India Support</div>
-
-<div>✔ Government Project Ready</div>
-
-</div>
-
-</div>
-
-<div class="hero-right">
-
-<img src="Logo.PNG" alt="MAGWHIRL Logo">
-
-</div>
-
-</div>
-
-</section>.hero{
-padding:90px 0;
-background:#0f2748;
-color:#fff;
-}
-
-.hero-grid{
-display:grid;
-grid-template-columns:1.3fr 1fr;
-gap:60px;
-align-items:center;
-}
-
-.hero-left h1{
-font-size:56px;
-line-height:1.1;
-margin:20px 0;
-}
-
-.accent{
-color:#ff7a00;
-}
-
-.lead{
-font-size:20px;
-color:#d8d8d8;
-margin-bottom:35px;
-max-width:700px;
-}
-
-.hero-buttons{
-display:flex;
-gap:20px;
-margin-bottom:35px;
-}
-
-.hero-points{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:15px;
-font-weight:600;
-}
-
-.hero-right img{
-width:100%;
-max-width:450px;
-display:block;
-margin:auto;
-}
+</body>
+</html>
